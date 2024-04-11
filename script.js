@@ -11,7 +11,7 @@ const addressWarn = document.getElementById("address-warn")
 
 let cart = [];
 
-// abrir o madal do carinho 
+
 cartBtn.addEventListener("click", function () {
     updateCartModal();
     cartModal.style.display = "flex"
@@ -44,7 +44,7 @@ menu.addEventListener("click", function (event) {
 
 })
 
-//funcão para adicionar no carinho 
+
 function addToCart(name, price) {
     const existingItem = cart.find(item => item.name === name)
 
@@ -64,7 +64,7 @@ function addToCart(name, price) {
 
 
 
-//atualiza carinho
+
 function updateCartModal() {
     cartItemsContainer.innerHTML = "";
     let total = 0;
@@ -104,7 +104,7 @@ cart.forEach(item => {
 
 }
 
-//funcao para remover o item do carinho 
+
 cartItemsContainer.addEventListener("click", function (event){
     if(event.target.classList.contains("remove-from-cart-btn")){
         const name = event.target.getAttribute("data-name")
@@ -166,7 +166,7 @@ checkoutBtn.addEventListener("click", function(){
         addresInput.classList.add("border-red-500")
         return;
     }
-    //enviar o pedido para api whtas
+   
     const cartItems = cart.map((item) => {
         return (
             ` ${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} |`
